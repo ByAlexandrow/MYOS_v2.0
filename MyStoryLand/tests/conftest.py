@@ -1,0 +1,29 @@
+import pytest
+from django.contrib.auth import get_user_model
+
+from api.legends.models import Legend
+
+
+User = get_user_model()
+
+
+@pytest.fixture
+def test_superuser():
+    return User.objects.create_superuser(
+        username='Test User',
+        email='email@mail.ru',
+        password='123123qweqwe',
+    )
+
+
+@pytest.fixture
+def test_legend(test_superuser):
+    return Legend.objects.create(
+        title_name='Test Legend',
+        title_img='test/path/to/title_img.png',
+        title_description='Test Description',
+        content='Test Legend Content',
+        tag_color='#FF0000',
+        author=test_superuser,
+        is_published=True
+    )
