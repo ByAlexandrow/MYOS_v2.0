@@ -6,7 +6,8 @@ MyStoryLand - обновленная версия сайта "Mystery Of Story" 
 
 1. Django, DRF
 2. 
-3. 
+3. TinyMCE
+4. Pytest
 
 ### Примеры использования
 
