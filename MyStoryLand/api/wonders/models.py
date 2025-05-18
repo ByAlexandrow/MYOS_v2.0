@@ -26,6 +26,12 @@ class Wonder(models.Model):
         verbose_name='Содержание',
         blank=True,
     )
+    audio = models.FileField(
+        upload_to='wonders/audio/',
+        verbose_name='Аудиофайл',
+        blank=True,
+        null=True
+    )
     tag_color = models.CharField(
         max_length=7,
         verbose_name='Tag',
