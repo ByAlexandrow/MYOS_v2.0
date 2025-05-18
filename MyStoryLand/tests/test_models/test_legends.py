@@ -10,6 +10,7 @@ def test_legend_creation(test_legend):
     assert test_legend.title_name == 'Test Legend'
     assert test_legend.title_img == 'test/path/to/title_img.png'
     assert test_legend.title_description == 'Test Description'
+    assert test_legend.audio == 'test/path/to/audio.mp3'
     assert test_legend.tag_color == '#FF0000'
     assert test_legend.is_published is True
     assert test_legend.created_at is not None

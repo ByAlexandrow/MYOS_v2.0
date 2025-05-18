@@ -26,6 +26,12 @@ class Legend(models.Model):
         verbose_name='Содержание',
         blank=True,
     )
+    audio = models.FileField(
+        upload_to='legends/audio/',
+        verbose_name='Аудиофайл',
+        blank=True,
+        null=True
+    )
     tag_color = models.CharField(
         max_length=7,
         verbose_name='Tag',
