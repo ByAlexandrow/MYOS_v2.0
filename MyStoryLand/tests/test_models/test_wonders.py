@@ -10,6 +10,7 @@ def test_wonder_creation(test_wonder):
     assert test_wonder.title_name == 'Test Wonder'
     assert test_wonder.title_img == 'test/path/to/title_img.png'
     assert test_wonder.title_description == 'Test Description'
+    assert test_wonder.audio == 'test/path/to/audio.mp3'
     assert test_wonder.tag_color == '#FF0000'
     assert test_wonder.is_published is True
     assert test_wonder.created_at is not None

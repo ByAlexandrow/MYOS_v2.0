@@ -24,6 +24,7 @@ def test_legend(test_superuser):
         title_img='test/path/to/title_img.png',
         title_description='Test Description',
         content='Test Legend Content',
+        audio='test/path/to/audio.mp3',
         tag_color='#FF0000',
         author=test_superuser,
         is_published=True
@@ -37,6 +38,7 @@ def test_wonder(test_superuser):
         title_img='test/path/to/title_img.png',
         title_description='Test Description',
         content='Test Wonder Content',
+        audio='test/path/to/audio.mp3',
         tag_color='#FF0000',
         author=test_superuser,
         is_published=True
