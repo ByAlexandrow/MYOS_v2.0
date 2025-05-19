@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.legends.urls')),
     path('api/', include('api.wonders.urls')),
+    path('api/', include('api.inventions.urls')),
     path('tinymce/', include('tinymce.urls')),
 ]

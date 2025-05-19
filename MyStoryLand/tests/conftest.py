@@ -3,6 +3,7 @@ from django.contrib.auth import get_user_model
 
 from api.legends.models import Legend
 from api.wonders.models import Wonder
+from api.inventions.models import Invention
 
 
 User = get_user_model()
@@ -38,6 +39,20 @@ def test_wonder(test_superuser):
         title_img='test/path/to/title_img.png',
         title_description='Test Description',
         content='Test Wonder Content',
+        audio='test/path/to/audio.mp3',
+        tag_color='#FF0000',
+        author=test_superuser,
+        is_published=True
+    )
+
+
+@pytest.fixture
+def test_invention(test_superuser):
+    return Invention.objects.create(
+        title_name='Test Invention',
+        title_img='test/path/to/title_img.png',
+        title_description='Test Description',
+        content='Test Invention Content',
         audio='test/path/to/audio.mp3',
         tag_color='#FF0000',
         author=test_superuser,

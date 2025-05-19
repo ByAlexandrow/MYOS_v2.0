@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api.legends',
     'api.wonders',
+    'api.inventions',
     'tinymce',
 ]
 
