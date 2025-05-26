@@ -14,7 +14,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+import os
+
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 from django.urls import path, include
 
 urlpatterns = [
@@ -23,4 +27,8 @@ urlpatterns = [
     path('api/', include('api.wonders.urls')),
     path('api/', include('api.inventions.urls')),
     path('tinymce/', include('tinymce.urls')),
+    path('', include('homepage.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=os.path.join(settings.BASE_DIR, 'static'))

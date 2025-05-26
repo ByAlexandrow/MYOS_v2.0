@@ -1,0 +1,54 @@
+{% load static %}
+<footer class="footer py-3">
+    <nav class="navbar navbar-expand nav-ex-footer">
+        <div class="container footer-container">
+            <a class="navbar-brand-footer" href="{% url 'homepage:index' %}">
+                <img src="/static/img/logo.svg" alt="Mystery Of Story" class="logo">
+                <span class="title-logo-footer">Mystery Of Story</span>
+            </a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="foot-nav navbar-nav mx-auto">
+                    <li class="footer-nav-item">
+                        <a class="nav-link" href="{% url 'homepage:index' %}#about-project">
+                            О проекте
+                        </a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:all_categories' %}active{% endif %}" href="...">
+                            Категории
+                        </a>
+                    </li>
+                    <li class="footer-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:new_articles' %}active{% endif %}" href="...">
+                            Новое
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-donation">
+                <button type="button" class="btn footer-donation" data-bs-toggle="modal" data-bs-target="#donationModal">Поддержать</button>
+            </div>
+        </div>
+    </nav>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var aboutProjectLink = document.querySelector('a[href="{% url 'homepage:index' %}#about-project"]');
+        if (aboutProjectLink) {
+            aboutProjectLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetUrl = this.href;
+                var targetId = targetUrl.split('#')[1];
+    
+                if (window.location.pathname !== "{% url 'homepage:index' %}") {
+                    window.location.href = targetUrl;
+                } else {
+                    var targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+    });
+</script>

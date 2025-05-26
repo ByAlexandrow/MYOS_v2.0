@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Mystery Of Story{% endblock %}
+{% block content %}
+<div class="container-main-page">
+    <div class="row justify-content-center">
+        <div class="main-page-img-card-container">
+            <p class="main-page-title-text-right">
+                В поисках корней нашего прошлого
+            </p>
+            <p class="main-page-title-text-left">
+                мы раскрываем истории, которые определяют наше настоящее
+            </p>
+            <div class="row main-carousel">
+                <div id="mainPageCarousel" class="carousel slide main-page-img-card" data-ride="carousel" data-interval="5000">
+                    <div class="carousel-inner">
+                        {% for category in categories %}
+                            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                                <img src="..." class="d-block w-100 main-page-img-card" alt="Article Image">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <a class="carousel-control-prev" href="#mainPageCarousel" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    </a>
+                    <a class="carousel-control-next" href="#mainPageCarousel" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="main-page-ellipse">
+                <span class="ellipse-text">
+                    <a href="https://t.me/By_Alexandrow" target="_blank" class="tg-link">by ALEXANDROW</a>
+                </span>
+            </div>
+        </div>
+        <div class="row main-page-category-title justify-content-center">
+            {% for category in categories %}
+                <div class="col-md-3 category-item">
+                    <div class="category-title">
+                        <a class="main-page-nav-link" href="...">
+                            <p class="title">{{ category.articles_category_title }}</p>
+                            <img src="..." class="category-vector">
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line" style="margin-bottom: 60px;">
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line">
+        <div class="row categories-on-main-page">
+            <div class="container-category">
+                <p class="category-name">КАТЕГОРИИ</p>
+                <p class="category-description">Истории обо всем и обо всех</p>
+            </div>
+            <div class="all-categories-on-main-page">
+                {% for category in categories %}
+                    <div class="row col-md-35 all-categories-item">
+                        <div class="one-category">
+                            <div class="category-image-container">
+                                <img class="category-img" src="...">
+                                <a class="category-link" href="...">
+                                    <img src="/static/img/category-link.svg">
+                                </a>
+                            </div>
+                            <div class="category-details justify-content-center">
+                                <p class="category-title">{{ category.articles_category_title }}</p>
+                                <p class="category-description">{{ category.articles_category_description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <a href="...">
+                    <button type="button" class="btn read-articles">ЧИТАТЬ</button>
+                </a>
+            </div>
+        </div>
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line" style="margin-bottom: 60px;" id="about-project">
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line">
+        <div class="row about-project">
+            <p class="main-page-about-project">О ПРОЕКТЕ</p>
+            <div class="main-text-about">
+                <div class="col-3"></div>
+                <div class="col-9 main-page-about">
+                    <p class="about-human-text">Mystery Of Story</p>
+                    <p class="about-human-text">
+                        В ночной тиши, когда звезды сияют как слезы забытых легенд, я пишу эти строки, словно последний приказ перед битвой.
+                        Моя рука дрожит, не от страха, а от нетерпения — нетерпения рассказать о тайнах, которые я обнаружил здесь, в глубинах этого древнего города.
+                    </p>
+                    <p class="about-human-text">
+                        Здесь, среди каменных лабиринтов и загадочных символов, каждый шаг — это откровение.
+                        Я видел ритуалы, которые не были предназначены для человеческого глаза, слышал голоса, которые не принадлежат этому миру.
+                        И все это — лишь частица того, что ждет меня впереди.
+                    </p>
+                    <p class="about-human-text">
+                        Но время ускользает, как песок сквозь пальцы.
+                        Я чувствую приближение чего-то великого, чего-то, что изменит понимание истории и мифологии.
+                        И все же, я не успею записать все, что видел и переживал.
+                        Эти строки — мой последний шанс оставить след, прежде чем...
+                    </p>
+                </div>
+            </div>
+        </div>
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line" style="margin-bottom: 60px;">
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line">
+        <div class="row new-articles-on-main-page">
+            <div class="container-new-articles">
+                <p class="main-page-new-articles">НОВОЕ</p>
+            </div>
+            <div class="all-new-articles-on-main-page">
+                {% for new_article in new_articles %}
+                    <div class="col-4 all-new-articles-item">
+                        <div class="new-article">
+                            <div class="new-article-image-container">
+                                <img class="new-article-img" src="...">
+                                <div class="overlay-text">
+                                    <img class="new-articles-title-svg" src="/static/img/new_articles_title.svg">
+                                    <div class="title-text">
+                                        <p class="new-article-title">{{ new_article.articles_title }}</p>
+                                    </div>
+                                </div>
+                                <div class="overlay-description">
+                                    <p class="new-article-description">{{ new_article.articles_description|truncatewords:5|safe }}</p>
+                                </div>
+                                <div class="overlay-icon">
+                                    <a href="...">
+                                        <img src="/static/img/arrow_new_articles.svg">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                <a href="...">
+                    <button type="button" class="btn read-articles">СМОТРЕТЬ ВСЕ</button>
+                </a>
+            </div>
+        </div>
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line" style="margin-top: 20px; margin-bottom: 60px;">
+        <img src="{% static 'img/line49.png' %}" class="main-page-img-line">
+    </div>
+</div>
+{% endblock %}

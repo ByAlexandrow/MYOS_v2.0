@@ -1,0 +1,144 @@
+header {
+    background-color: #3030A6;
+    position: sticky;
+    top: 0;
+    padding: 0px 5px;
+    z-index: 1000;
+}
+.head-nav {
+    padding-right: 325px;
+}
+.nav-link {
+    color: white;
+    font-family: "Unbounded";
+    font-weight: 500;
+    font-style: normal;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+.nav-link:hover {
+    color: white;
+}
+.header-category-vector {
+    width: 20px;
+    height: 10px;
+}
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-brand-header span {
+    white-space: nowrap;
+}
+.navbar-brand-header {
+    font-family: "Bruno Ace", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+.navbar-brand-header:hover {
+    color: white;
+}
+.header-logo {
+    margin-right: 10px;
+}
+.header-donation {
+    color: white;
+    font-family: "Unbounded";
+    font-weight: 500;
+    font-style: normal;
+    background-color: #3030A6;
+    border-radius: 22px;
+    border-color: #4C956C;
+    width: 248px;
+    height: 37px;
+}
+.header-donation:hover {
+    border-color: #4C956C;
+    color: white;
+    text-decoration: solid;
+}
+.toggle-menu-icon {
+    display: none;
+}
+.menu-links {
+    display: none;
+}
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .navbar-brand-header {
+        flex-direction: row;
+        justify-content: center;
+    }
+    .navbar-brand-header:hover {
+        color: white;
+    }
+    .header-logo {
+        margin-right: 10px;
+        width: 40px;
+        height: 52px;
+    }
+    .title-logo-header {
+        font-size: 20px;
+    }
+    .head-nav, .header-donation {
+        display: none;
+    }
+    .toggle-menu-icon {
+        display: block;
+        width: 28px;
+        height: 25px;
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+    }
+    .menu-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        background-color: #3030A6;
+        width: 100%;
+        text-align: center;
+    }
+    .menu-links ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .menu-links li {
+        padding: 10px;
+        border-bottom: 1px solid #3030A6;
+    }
+    .menu-links li:last-child {
+        border-bottom: none;
+    }
+    .menu-donation {
+        text-align: center;
+        color: white;
+        font-family: "Unbounded";
+        font-weight: 500;
+        font-style: medium;
+        background-color: #3030A6;
+        border-radius: 22px;
+        border-color: #4C956C;
+        width: 299px;
+        height: 43px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+    }
+    .menu-donation:hover {
+        align-items: center;
+        text-align: center;
+        border-color: #4C956C;
+        color: white;
+        text-decoration: solid;
+    }
+}

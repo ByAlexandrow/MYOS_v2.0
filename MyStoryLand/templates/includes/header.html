@@ -1,0 +1,92 @@
+{% load static %}
+<header class="header">
+    <nav class="navbar navbar-expand nav-ex-header">
+        <div class="container header-container">
+            <a class="navbar-brand-header" href="{% url 'homepage:index' %}">
+                <img src="{% static 'img/logo.svg' %}" alt="Mystery Of Story" class="header-logo">
+                <span class="title-logo-header">Mystery Of Story</span>
+            </a>
+            <img src="/static/img/hamburger.svg" alt="Toggle-Menu" class="toggle-menu-icon">
+            <div class="menu-links">
+                <ul>
+                    <li class="header-nav-item">
+                        <a class="nav-link" href="{% url 'homepage:index' %}#about-project">
+                            О проекте
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:all_categories' %}active{% endif %}" href="...">
+                            Категории
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:new_articles' %}active{% endif %}" href="...">
+                            Новое
+                        </a>
+                    </li>
+                    <li>
+                        <button type="button" class="btn menu-donation" data-bs-toggle="modal" data-bs-target="#donationModal">Поддержать</button>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="head-nav navbar-nav mx-auto">
+                    <li class="header-nav-item">
+                        <a href="{% url 'homepage:index' %}#about-project" id="about-project-link" class="nav-link">
+                            О проекте
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:all_categories' %}active{% endif %}" href="...">
+                            Категории
+                            <img src="/static/img/vector.svg" class="header-category-vector">
+                        </a>
+                    </li>
+                    <li class="header-nav-item">
+                        <a class="nav-link {% if view_name == 'articles:new_articles' %}active{% endif %}" href="...">
+                            Новое
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="header-donation">
+                <button type="button" class="btn header-donation" data-bs-toggle="modal" data-bs-target="#donationModal">Поддержать</button>
+            </div>
+        </div>
+    </nav>
+</header>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var aboutProjectLink = document.getElementById('about-project-link');
+        if (aboutProjectLink) {
+            aboutProjectLink.addEventListener('click', function(event) {
+                event.preventDefault();
+                var targetUrl = this.href;
+                var targetId = targetUrl.split('#')[1];
+
+                if (window.location.pathname !== "{% url 'homepage:index' %}") {
+                    window.location.href = targetUrl;
+                } else {
+                    var targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        }
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const toggleMenuIcon = document.querySelector('.toggle-menu-icon');
+        const menuLinks = document.querySelector('.menu-links');
+    
+        toggleMenuIcon.addEventListener('click', function() {
+            if (menuLinks.style.display === 'block') {
+                menuLinks.style.display = 'none';
+            } else {
+                menuLinks.style.display = 'block';
+            }
+        });
+    });
+</script>
